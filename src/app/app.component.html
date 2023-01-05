@@ -1,9 +1,17 @@
+<div class="ornament-1"></div>
+<header>
+  <nav>
+    <a id="logo" routerLink="/" rel="home"><img src="assets/logo.svg" alt="logo" width="100" height="100"> apus-apus-dev</a>
+    &nbsp;
+    <ng-container *ngFor="let headerItem of headerItems; let isLast = last">
+      <a [attr.id]="headerItem.id" [routerLink]="headerItem.link" routerLinkActive="active">{{headerItem.title}}</a>{{ isLast ? '' : ' | '}}
+    </ng-container>
+  </nav>
+</header>
 <div class="content" role="main">
-  <img src="assets/logo.svg" alt="logo">
-
   <router-outlet></router-outlet>
-
 </div>
 <footer>
-  apus apus dev
+  apus-apus-dev footer
 </footer>
+<div class="ornament-1"></div>
