@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/apus-apus-dev",
+    "public": "dist/apus-apus-dev/uk-UA",
     "ignore": [
       "firebase.json",
       "**/.*",
