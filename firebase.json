@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/apus-apus-dev/uk-UA",
+    "public": "dist/apus-apus-dev",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -8,9 +8,16 @@
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/uk-UA/**",
+        "destination": "/uk-UA/index.html"
+      },
+      {
+        "source": "/en-US/**",
+        "destination": "/en-US/index.html"
       }
-    ]
+    ],
+    "i18n": {
+      "root": "/"
+    }
   }
 }
