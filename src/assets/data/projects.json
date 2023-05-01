@@ -1,0 +1,18 @@
+{
+  "projects": [
+    {
+      "name": "Sort Racing",
+      "location": 1,
+      "slug": "sort-racing",
+      "externalUrl": "",
+      "people": ["531"]
+    },
+    {
+      "name": "Test Project",
+      "location": 1,
+      "slug": "test-project",
+      "externalUrl": "",
+      "people": ["531", "532", "533"]
+    }
+  ]
+}

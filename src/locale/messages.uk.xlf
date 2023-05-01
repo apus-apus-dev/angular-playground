@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="3652968851484136061" datatype="html">
+        <source>What is this webpage?</source>
+        <target>Що це за сторінка?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/about/about.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9091736974936713960" datatype="html">
+        <source>This page is the showcase of sandbox projects made by organization of developers that once were or are currently working together.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/about/about.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4973326348251335892" datatype="html">
+        <source>What&apos;s the purpose of this organization</source>
+        <target>Яка мета даної організації?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/about/about.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6306394796214416839" datatype="html">
+        <source>The purpose of this organization is mainly to solve the struggle for never ending process of education. Sometimes there is a need to try out things, framework updates, or even well known concepts. The motivation for this urge is usually lowered by several factors. First is our non IT hobbies and leisure activities that look far more appealing after a work day. Second is the fact that nobody is going to see the result (artifact) of our self-education labour. By making a both social and entertaining atmosphere it is intended to give a creative boost toa everyone involved.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/about/about.component.html</context>
+          <context context-type="linenumber">8,13</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

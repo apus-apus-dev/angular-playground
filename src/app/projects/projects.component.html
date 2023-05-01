@@ -1,2 +1,5 @@
-<p>projects works!</p>
-<app-under-construction></app-under-construction>
+<h2>Projects</h2>
+<div *ngFor="let project of projects">
+  <a [routerLink]="project.routerLink">{{ project.name }}</a>
+  <img *ngFor="let member of project.members" [src]="member.avatar" [alt]="'avatar for ' + member.name">
+</div>

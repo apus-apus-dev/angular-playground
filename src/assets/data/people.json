@@ -1,0 +1,25 @@
+{
+  "people": [
+    {
+      "id": "531",
+      "nickname": "syperia",
+      "realName": "Basil",
+      "email": "syperia@gmail.com",
+      "githubUsername": "Syperia"
+    },
+    {
+      "id": "532",
+      "nickname": "young-swift",
+      "realName": "Swift 1",
+      "email": "example@test.net",
+      "githubUsername": ""
+    },
+    {
+      "id": "533",
+      "nickname": "young-swift-2",
+      "realName": "Swift 2",
+      "email": "example2@test.net",
+      "githubUsername": ""
+    }
+  ]
+}

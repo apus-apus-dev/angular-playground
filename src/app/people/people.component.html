@@ -1,2 +1,10 @@
-<p>people works!</p>
-<app-under-construction></app-under-construction>
+<h2>People</h2>
+<div *ngFor="let developer of developers">
+  <a href="https://github.com/{{developer.githubUsername}}"><img [alt]="developer.nickname" [src]="developer.gravatar"></a> {{ developer.realName }}
+  <details>
+    <summary>(projects: {{ developer.projectsCount }})</summary>
+      <div *ngFor="let project of developer.projects">
+        <div>{{ project.name }}</div>
+      </div>
+  </details>
+</div>
