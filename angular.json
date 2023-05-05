@@ -24,7 +24,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "localize": [
-              "uk-UA", "en-US"
+              "en-US"
             ],
             "outputPath": "dist/apus-apus-dev",
             "index": "src/index.html",
