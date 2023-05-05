@@ -7,6 +7,25 @@ import { ProjectLocation } from './project-location';
 
 var gravatar = require('gravatar');
 
+function mapProject(people: any[], project: any): Project {
+  const members = people
+    .filter((developer) => project.people.includes(developer.id))
+    .map((developer) => ({
+      id: developer.id,
+      name: developer.nickname,
+      avatar: gravatar.url(developer.email, {s: '40', d: 'identicon'}),
+    }));
+  switch (project.location as ProjectLocation) {
+    case ProjectLocation.External:
+
+  }
+  return {
+    ...project,
+    members,
+    routerLink: project.location === ProjectLocation.External ? project.externalUrl : '/projects/' + project.slug,
+  }
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -37,26 +56,16 @@ export class DataService {
   getProjects(): Observable<Project[]> {
     return forkJoin([this.provider.getPeople(), this.provider.getProjects()]).pipe(
       map(([{people}, {projects}]) => {
-        console.log(people)
-        return projects.map((project) => {
-          const members = people
-            .filter((developer) => project.people.includes(developer.id))
-            .map((developer) => ({
-              id: developer.id,
-              name: developer.nickname,
-              avatar: gravatar.url(developer.email, {s: '40', d: 'identicon'}),
-            }));
-          switch (project.location as ProjectLocation) {
-            case ProjectLocation.External:
-
-          }
-          return {
-            ...project,
-            members,
-            routerLink: project.location === ProjectLocation.External ? project.externalUrl : '/projects/' + project.slug,
-          }
-        });
+        return projects.map((project) => mapProject(people, project));
       }),
     )
+  }
+
+  getProject(slug: string): Observable<Project> {
+    return forkJoin([this.provider.getPeople(), this.provider.getProjects()]).pipe(
+      map(([{people}, {projects}]) => {
+        return mapProject(people, projects.find((project) => project.slug === slug));
+      }),
+    );
   }
 }
