@@ -51,7 +51,7 @@ $ornament-1-height: $pixel-multiplier * 21;
 $grey-background: linear-gradient(180deg, $color-grey-1 0%, $color-grey-2 13%, $color-grey-2 87%, $color-grey-1 100%);
 
 .ornament-1 {
-  background-image: url("../assets/ornament-1.png");
+  background-image: url("../../assets/ornament-1.png");
   background-repeat: repeat-x;
   width: 100%;
   height: $ornament-1-height;
