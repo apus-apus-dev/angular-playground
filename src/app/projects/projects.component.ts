@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Project } from '../data/project';
 import { DataService } from '../data/data.service';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
-@UntilDestroy()
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -12,6 +11,6 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 export class ProjectsComponent {
   projects: Project[] = [];
   constructor(public dataService: DataService) {
-    dataService.getProjects().pipe(untilDestroyed(this)).subscribe((projects) => this.projects = projects);
+    dataService.getProjects().pipe(takeUntilDestroyed()).subscribe((projects) => this.projects = projects);
   }
 }

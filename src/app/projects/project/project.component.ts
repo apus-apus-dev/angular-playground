@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { Project } from '../../data/project';
 import { DataService } from '../../data/data.service';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { ActivatedRoute } from '@angular/router';
 import { map, of, switchMap } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
-@UntilDestroy()
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
@@ -17,7 +16,7 @@ export class ProjectComponent {
     activatedRoute.paramMap.pipe(
       map((params) => params.get('projectSlug')),
       switchMap((slug) => slug ? dataService.getProject(slug) : of(null)),
-      untilDestroyed(this)
+      takeUntilDestroyed()
     ).subscribe((project) => this.project = project);
   }
 }
