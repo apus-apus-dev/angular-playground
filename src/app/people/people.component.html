@@ -4,7 +4,7 @@
   <details>
     <summary>(projects: {{ developer.projectsCount }})</summary>
       <div *ngFor="let project of developer.projects">
-        <div>{{ project.name }}</div>
+        <a [routerLink]="['/projects', project.slug]">{{ project.name }}</a>
       </div>
   </details>
 </div>

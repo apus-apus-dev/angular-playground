@@ -22,7 +22,7 @@ function mapProject(people: any[], project: any): Project {
   return {
     ...project,
     members,
-    routerLink: project.location === ProjectLocation.External ? project.externalUrl : '/projects/' + project.slug,
+    routerLink: project.location === ProjectLocation.External ? project.externalUrl : '/projects/local/' + project.slug,
   }
 }
 

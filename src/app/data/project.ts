@@ -1,6 +1,7 @@
 import { ProjectLocation } from './project-location';
 
 export interface Project {
+  description: string;
   name: string,
   location: ProjectLocation,
   slug: string,

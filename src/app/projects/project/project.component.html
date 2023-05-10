@@ -1,2 +1,5 @@
-<p *ngIf="!project">Project not found</p>
-{{ project | json }}
+<div *ngIf="project">
+  <h2>{{ project.name }}</h2>
+  <p>{{ project.description }}</p>
+  <a [routerLink]="project.routerLink">launch</a>
+</div>
