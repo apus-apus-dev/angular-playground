@@ -1,5 +1,5 @@
-<h2>People</h2>
-<div *ngFor="let developer of developers">
+<h2>apus-apus members</h2>
+<div *ngFor="let developer of developers" class="member">
   <a href="https://github.com/{{developer.githubUsername}}"><img [alt]="developer.nickname" [src]="developer.gravatar"></a> {{ developer.realName }}
   <details>
     <summary>(projects: {{ developer.projectsCount }})</summary>

@@ -1,2 +1,10 @@
-<p>home works!</p>
-<app-under-construction></app-under-construction>
+<h2>Welcome to apus-apus.dev</h2>
+<p>a place where common swifts learn to fly</p>
+<ng-container *ngIf="project">
+  <h3>Featured projects</h3>
+  <div class="featured">
+    {{ project.name }}
+    <p>{{ project.description }}</p>
+    <a [routerLink]="project.routerLink">launch</a>
+  </div>
+</ng-container>

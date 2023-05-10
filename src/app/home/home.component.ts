@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Project } from '../data/project';
+import { DataService } from '../data/data.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+  project: Project | null = null;
+  constructor(public dataService: DataService) {
+    dataService.getFeaturedProject().subscribe((project) => this.project = project);
+  }
 }

@@ -28,7 +28,7 @@ p {
 
 .content {
   display: flex;
-  margin: 82px auto 32px;
+  //margin: 82px auto 32px;
   padding: 0 16px;
   max-width: 960px;
   flex-direction: column;
@@ -63,8 +63,13 @@ $grey-background: linear-gradient(180deg, $color-grey-1 0%, $color-grey-2 13%, $
 header {
   position: sticky;
   top: 0;
-  height: 128px;
-  background: $grey-background;
+  background: $color-grey-1;
+  border-bottom: solid $color-grey-2;
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
 
   .active {
     font-weight: bold;
@@ -72,7 +77,8 @@ header {
 }
 
 footer {
-
+  padding: 16px 16px 0;
+  color: $color-grey-3;
 }
 
 footer a {

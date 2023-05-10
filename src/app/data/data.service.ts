@@ -68,4 +68,8 @@ export class DataService {
       }),
     );
   }
+
+  getFeaturedProject() {
+    return this.getProject('sort-racing');
+  }
 }
