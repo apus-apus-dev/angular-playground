@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SortRacingRoutingModule } from './sort-racing-routing.module';
 import { SortRacingComponent } from './sort-racing.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { SortRacingComponent } from './sort-racing.component';
   ],
   imports: [
     CommonModule,
-    SortRacingRoutingModule
-  ]
+    SortRacingRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
 })
 export class SortRacingModule { }

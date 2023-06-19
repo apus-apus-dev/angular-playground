@@ -5,7 +5,6 @@ import { CypherHelperRoutingModule } from './cypher-helper-routing.module';
 import { CypherHelperComponent } from './cypher-helper.component';
 import { FormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     CypherHelperComponent
