@@ -1,5 +1,6 @@
 export type CompareFn<T> = (a: T, b: T) => number;
-export type SortFunction<T> = (arr: Array<T>, compareFn: CompareFn<T>) => Array<T>;
+export type RaceCompareFn<T> = (a: T, b: T, arr?: Array<T>) => number;
+export type SortFunction<T> = (arr: Array<T>, compareFn: RaceCompareFn<T>) => Array<T>;
 
 export enum SortAlgorithm {
   Bubble = 0,

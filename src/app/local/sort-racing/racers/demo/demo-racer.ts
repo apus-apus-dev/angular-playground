@@ -1,10 +1,10 @@
-import { CompareFn, SortAlgorithm, SortRacer } from '../sort-racer';
+import { CompareFn, RaceCompareFn, SortAlgorithm, SortRacer } from '../../sort-racer';
 
-function bubbleSort<T>(arr: Array<T>, compareFn: CompareFn<T>): Array<T> {
+function bubbleSort<T>(arr: Array<T>, compareFn: RaceCompareFn<T>): Array<T> {
   return arr.sort(compareFn);
 }
 
-function insertionSort<T>(arr: Array<T>, compareFn: CompareFn<T>): Array<T> {
+function insertionSort<T>(arr: Array<T>, compareFn: RaceCompareFn<T>): Array<T> {
   return arr.reverse().sort(compareFn).reverse().reverse();
 }
 

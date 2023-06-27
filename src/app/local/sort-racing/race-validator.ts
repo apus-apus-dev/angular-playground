@@ -1,4 +1,4 @@
-import { CompareFn } from './racers/sort-racer';
+import { CompareFn } from './sort-racer';
 
 export function isRaceValid<T>(arr: Array<T>, compareFn: CompareFn<T>): boolean {
   return arr.every((value, index, array) => {
