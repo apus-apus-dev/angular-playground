@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
+import intervalToDuration from 'date-fns/intervalToDuration'
+import addMonths from 'date-fns/addMonths'
+
 const LOCAL_STORAGE_KEY = 'finance-helper';
 interface Period {
   days: { [dayDate: string]: { amount: number }; };
@@ -104,9 +107,17 @@ class FinanceData {
   }
 
   updateViewModel() {
+    const period = this.touchCurrentPeriod();
+    const totalSpent = Object.values(period.days).reduce((acc, curr) => {
+      acc += curr.amount;
+      return acc;
+    }, 0);
+    const payDateDate = getPayDateDate(this.data.general.payDate);
+    const daysToPayday = intervalToDuration({ start: new Date(), end: addMonths(payDateDate, 1) }).days || 0;
     this.viewModel = {
+      totalSpent,
       spentToday: this.touchCurrentDate().amount,
-      allowedToSpendToday: 1
+      allowedToSpendToday: (period.periodAmount - totalSpent) / daysToPayday,
     }
   }
 
@@ -134,6 +145,7 @@ class FinanceData {
 interface ViewModel {
   spentToday?: number;
   allowedToSpendToday?: number;
+  totalSpent?: number;
 }
 
 @Component({

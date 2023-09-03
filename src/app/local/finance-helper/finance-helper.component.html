@@ -2,6 +2,7 @@
   <div *ngIf="financeData.viewModel as vm">
     <div>Today spent: {{ vm.spentToday }}</div>
     <div>Today allowed: {{ vm.allowedToSpendToday }}</div>
+    <div>Total spent: {{ vm.totalSpent }}</div>
   </div>
   <input type="number" formControlName="amount">
   <button type="submit">Add amount</button>
