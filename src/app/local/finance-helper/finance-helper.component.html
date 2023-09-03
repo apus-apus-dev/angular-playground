@@ -1,0 +1,25 @@
+<form [formGroup]="financeForm" (ngSubmit)="handleSubmitDaily()">
+  <div *ngIf="financeData.viewModel as vm">
+    <div>Today spent: {{ vm.spentToday }}</div>
+    <div>Today allowed: {{ vm.allowedToSpendToday }}</div>
+  </div>
+  <input type="number" formControlName="amount">
+  <button type="submit">Add amount</button>
+</form>
+<br>
+<div>
+  <button (click)="isSettingsShown = true" *ngIf="!isSettingsShown">settings</button>
+  <form *ngIf="isSettingsShown" [formGroup]="settingsForm" (ngSubmit)="handleSaveSettings()">
+    <input type="number" id="spentToday" formControlName="spentToday">
+    <label for="spentToday">spentToday</label><br>
+    <input type="number" id="monthBudget" formControlName="monthBudget">
+    <label for="monthBudget">monthBudget</label><br>
+    <input type="number" id="payDate" formControlName="payDate">
+    <label for="payDate">payDate</label><br>
+    <input type="number" id="periodAmount" formControlName="periodAmount">
+    <label for="periodAmount">periodAmount</label><br>
+    <input type="number" id="dailyAmount" formControlName="dailyAmount">
+    <label for="dailyAmount">dailyAmount</label><br>
+    <button type="submit">Save</button>
+  </form>
+</div>

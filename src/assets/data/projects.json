@@ -15,6 +15,14 @@
       "externalUrl": "",
       "people": ["531", "532", "533"],
       "description": "Test description"
+    },
+    {
+      "name": "Finance helper",
+      "location": 1,
+      "slug": "finance-helper",
+      "externalUrl": "",
+      "people": ["531"],
+      "description": "This small instrument is great for planning the daily expenses."
     }
   ]
 }
