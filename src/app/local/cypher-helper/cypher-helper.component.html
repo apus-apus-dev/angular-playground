@@ -1,2 +1,23 @@
-The color of your location : {{ latitude }} {{ longitude }}
-<div [style.background-color]="bg" style="width: 200px; height: 200px"></div>
+<button (click)="clearSelection()">Clear Selection</button>
+<div class="example-header">
+  Page Size:
+  <select (change)="onPageSizeChanged($event)" id="page-size">
+    <option value="10">10</option>
+    <option value="100">100</option>
+    <option value="500">500</option>
+    <option value="1000">1000</option>
+  </select>
+</div>
+<ag-grid-angular
+  style="width: 100%; height: 100%"
+  class="ag-theme-alpine"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef"
+  [rowModelType]="'serverSide'"
+  [animateRows]="true"
+  (gridReady)="onGridReady($event)"
+  (cellClicked)="onCellClicked($event)"
+  [pagination]="pagination"
+  [cacheBlockSize]="cacheBlockSize"
+  [paginationPageSize]="paginationPageSize"
+></ag-grid-angular>
