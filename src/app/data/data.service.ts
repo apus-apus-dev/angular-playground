@@ -4,8 +4,7 @@ import { forkJoin, map, Observable } from 'rxjs';
 import { Developer } from './developer';
 import { Project } from './project';
 import { ProjectLocation } from './project-location';
-
-var gravatar = require('gravatar');
+import { url } from 'gravatar';
 
 function mapProject(people: any[], project: any): Project {
   const members = people
@@ -13,7 +12,7 @@ function mapProject(people: any[], project: any): Project {
     .map((developer) => ({
       id: developer.id,
       name: developer.nickname,
-      avatar: gravatar.url(developer.email, {s: '40', d: 'identicon'}),
+      avatar: url(developer.email, {s: '40', d: 'identicon'}),
     }));
   switch (project.location as ProjectLocation) {
     case ProjectLocation.External:
@@ -42,7 +41,7 @@ export class DataService {
             const developerProjects = projects.filter((project) => project.people.includes(developer.id))
             return {
               ...developer,
-              gravatar: gravatar.url(developer.email, {s: '80', d: 'identicon'}),
+              gravatar: url(developer.email, {s: '80', d: 'identicon'}),
               projects: developerProjects,
               projectsCount: developerProjects.length,
             }
