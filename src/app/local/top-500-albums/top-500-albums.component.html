@@ -1,0 +1,15 @@
+<!-- Descriptions of the functionality -->
+<div class="container">
+  <h1>Top 500 Albums</h1>
+  <p>
+    Explore our curated list of the top 500 albums of all time. Discover
+    timeless classics and modern masterpieces across various genres.
+  </p>
+    <ul>
+        @for (item of items(); track item.rank) {
+        <li>{{item.rank}} {{ item.albumTitle }} by {{ item.artist }}</li>
+        <button (click)="copyToClipboard(item)">Copy Info</button>
+        <button (click)="findOnYTMusic(item)">Find on YT Music</button>
+        }
+    </ul>
+</div>

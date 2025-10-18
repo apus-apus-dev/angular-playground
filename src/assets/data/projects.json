@@ -23,6 +23,14 @@
       "externalUrl": "",
       "people": ["531"],
       "description": "This small instrument is great for planning the daily expenses."
+    },
+    {
+      "name": "Top 500 Albums",
+      "location": 1,
+      "slug": "top-500-albums",
+      "externalUrl": "",
+      "people": ["531"],
+      "description": "This tool allows to track and explore the top 500 albums of all time."
     }
   ]
 }

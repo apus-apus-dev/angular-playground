@@ -18,6 +18,10 @@ export class DataProvider {
     return this.getData('projects.json');
   }
 
+  getAlbums(): Observable<any[]> {
+    return this.getData('top-500-albums.json');
+  }
+
   private getData(fileName: string): any {
     return this.http.get(`assets/data/${fileName}`);
   }
