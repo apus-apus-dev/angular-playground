@@ -7,9 +7,13 @@
   </p>
     <ul>
         @for (item of items(); track item.rank) {
-        <li>{{item.rank}} {{ item.albumTitle }} by {{ item.artist }}</li>
-        <button (click)="copyToClipboard(item)">Copy Info</button>
+        <li [class.listened]="item.listened">{{item.rank}} {{ item.albumTitle }} by {{ item.artist }}
+                  <button (click)="copyToClipboard(item)">Copy Info</button>
         <button (click)="findOnYTMusic(item)">Find on YT Music</button>
+        <button (click)="toggleListened(item)">
+          {{ item.listened ? 'Unmark as Listened' : 'Mark as Listened' }}
+        </button>
+        </li>
         }
     </ul>
 </div>
