@@ -1,10 +1,14 @@
 <h2>apus-apus members</h2>
-<div *ngFor="let developer of developers" class="member">
-  <a href="https://github.com/{{developer.githubUsername}}"><img [alt]="developer.nickname" [src]="developer.gravatar"></a> {{ developer.realName }}
-  <details>
-    <summary>(projects: {{ developer.projectsCount }})</summary>
-      <div *ngFor="let project of developer.projects">
-        <a [routerLink]="['/projects', project.slug]">{{ project.name }}</a>
-      </div>
-  </details>
-</div>
+@for (developer of developers; track developer) {
+  <div class="member">
+    <a href="https://github.com/{{developer.githubUsername}}"><img [alt]="developer.nickname" [src]="developer.gravatar"></a> {{ developer.realName }}
+    <details>
+      <summary>(projects: {{ developer.projectsCount }})</summary>
+      @for (project of developer.projects; track project) {
+        <div>
+          <a [routerLink]="['/projects', project.slug]">{{ project.name }}</a>
+        </div>
+      }
+    </details>
+  </div>
+}

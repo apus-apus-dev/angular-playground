@@ -1,7 +1,9 @@
 <form [formGroup]="racingForm" (ngSubmit)="handleSubmit()">
   <input [formControlName]="'input'">
   <select [formControlName]="'algorithm'">
-    <option *ngFor="let sortingAlgorithm of sortingAlgorithms" [value]="sortingAlgorithm.value">{{ sortingAlgorithm.name }}</option>
+    @for (sortingAlgorithm of sortingAlgorithms; track sortingAlgorithm) {
+      <option [value]="sortingAlgorithm.value">{{ sortingAlgorithm.name }}</option>
+    }
   </select>
   <button type="submit">Begin</button>
 </form>

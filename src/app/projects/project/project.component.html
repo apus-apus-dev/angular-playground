@@ -1,5 +1,7 @@
-<div *ngIf="project">
-  <h2>{{ project.name }}</h2>
-  <p>{{ project.description }}</p>
-  <a [routerLink]="project.routerLink">launch</a>
-</div>
+@if (project) {
+  <div>
+    <h2>{{ project.name }}</h2>
+    <p>{{ project.description }}</p>
+    <a [routerLink]="project.routerLink">launch</a>
+  </div>
+}

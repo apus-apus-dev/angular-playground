@@ -3,9 +3,9 @@
   <nav>
     <a id="logo" routerLink="/" rel="home"><img src="assets/logo.svg" alt="logo" width="50" height="50"></a>
     &nbsp;
-    <ng-container *ngFor="let headerItem of headerItems; let isLast = last">
+    @for (headerItem of headerItems; track headerItem; let isLast = $last) {
       <a [attr.id]="headerItem.id" [routerLink]="headerItem.link" routerLinkActive="active">{{headerItem.title}}</a>{{ isLast ? '' : ' | '}}
-    </ng-container>
+    }
   </nav>
 </header>
 <div class="content" role="main">
