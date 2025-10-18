@@ -4,9 +4,10 @@ import { Developer } from '../data/developer';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'app-people',
-  templateUrl: './people.component.html',
-  styleUrls: ['./people.component.scss']
+    selector: 'app-people',
+    templateUrl: './people.component.html',
+    styleUrls: ['./people.component.scss'],
+    standalone: false
 })
 export class PeopleComponent {
   developers: Developer[] = [];

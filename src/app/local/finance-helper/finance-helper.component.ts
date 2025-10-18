@@ -149,9 +149,10 @@ interface ViewModel {
 }
 
 @Component({
-  selector: 'app-cypher-helper',
-  templateUrl: './finance-helper.component.html',
-  styleUrls: ['./finance-helper.component.scss']
+    selector: 'app-cypher-helper',
+    templateUrl: './finance-helper.component.html',
+    styleUrls: ['./finance-helper.component.scss'],
+    standalone: false
 })
 export class FinanceHelperComponent {
   financeData: FinanceData = new FinanceData();

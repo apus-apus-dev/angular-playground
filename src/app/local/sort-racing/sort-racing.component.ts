@@ -24,9 +24,10 @@ function getCorrectPlacementScore2(arr: RoadPiece[]): number {
 }
 
 @Component({
-  selector: 'app-sort-racing',
-  templateUrl: './sort-racing.component.html',
-  styleUrls: ['./sort-racing.component.scss']
+    selector: 'app-sort-racing',
+    templateUrl: './sort-racing.component.html',
+    styleUrls: ['./sort-racing.component.scss'],
+    standalone: false
 })
 export class SortRacingComponent {
   constructor(private fb: FormBuilder) {

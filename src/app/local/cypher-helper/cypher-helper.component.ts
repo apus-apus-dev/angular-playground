@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'app-cypher-helper',
-  templateUrl: './cypher-helper.component.html',
-  styleUrls: ['./cypher-helper.component.scss']
+    selector: 'app-cypher-helper',
+    templateUrl: './cypher-helper.component.html',
+    styleUrls: ['./cypher-helper.component.scss'],
+    standalone: false
 })
 export class CypherHelperComponent {
   latitude: number = 0;
