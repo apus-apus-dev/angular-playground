@@ -1,19 +1,50 @@
 <!-- Descriptions of the functionality -->
 <div class="container">
   <h1>Top 500 Albums</h1>
+  <div class="version-select">
+    <label for="version">Version:</label>
+    <select id="version" [(ngModel)]="selectedVersion">
+      @for (item of availableVersions(); track item) {
+      <option [selected]="item === selectedVersion()" [value]="item">
+        {{ item }}
+      </option>
+      }
+    </select>
+  </div>
+  <div class="platform-select">
+    <label for="platform">Platform:</label>
+    <select id="platform" [(ngModel)]="selectedPlatform">
+      ]"> @for (item of availablePlatforms(); track item) {
+      <option [selected]="item === selectedPlatform()" [value]="item">
+        {{ item }}
+      </option>
+      }
+    </select>
+  </div>
   <p>
-    Explore our curated list of the top 500 albums of all time. Discover
-    timeless classics and modern masterpieces across various genres.
+    Explore our curated list of the top 500 albums of all time. Discover timeless classics and modern masterpieces across various genres.
   </p>
-    <ul>
-        @for (item of items(); track item.rank) {
-        <li [class.listened]="item.listened">{{item.rank}} {{ item.albumTitle }} by {{ item.artist }}
-                  <button (click)="copyToClipboard(item)">Copy Info</button>
-        <button (click)="findOnYTMusic(item)">Find on YT Music</button>
-        <button (click)="toggleListened(item)">
-          {{ item.listened ? 'Unmark as Listened' : 'Mark as Listened' }}
-        </button>
-        </li>
-        }
-    </ul>
+  <ul>
+    @for (item of items(); track item.rank) {
+    <li [class.listened]="item.listened">
+      @if (item.rank === listenedState.lastListenedRank) {
+      <!-- scroll into view if was selected -->
+      <div #lastListened></div>
+      }
+      {{ item.rank }} {{ item.albumTitle }} by {{ item.artist }}
+      <button (click)="copyToClipboard(item)">Copy Info</button>
+      <button (click)="findOnMusicPlatform(item)">Find on {{ selectedPlatform() }}</button>
+      <button (click)="toggleDescription(item.rank)">Description</button>
+      @if (item.rank === descriptionToggleRank()) {
+      <div class="description">
+        <p>{{ item.description }}</p>
+      </div>
+      }
+
+      <button (click)="toggleListened(item)">
+        {{ item.listened ? 'Unmark as Listened' : 'Mark as Listened' }}
+      </button>
+    </li>
+    }
+  </ul>
 </div>

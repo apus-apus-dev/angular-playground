@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables" as *;
 
 $texture-1-width: $pixel-multiplier * 32;
 $texture-1-height: $pixel-multiplier * 32;
