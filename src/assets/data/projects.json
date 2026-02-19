@@ -38,7 +38,7 @@
       "slug": "har-analyzer",
       "externalUrl": "",
       "people": ["531"],
-      "description": "Test description"
+      "description": "Sometimes the customer says that the page is loading too long. But he does not take into account the amount of redirects, that is preceeding the page loading. This tool allows to analyze the delta time between the page loads."
     }
   ]
 }
