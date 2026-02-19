@@ -31,6 +31,14 @@
       "externalUrl": "",
       "people": ["531"],
       "description": "This tool allows to track and explore the top 500 albums of all time."
+    },
+    {
+      "name": "HAR-analyzer",
+      "location": 1,
+      "slug": "har-analyzer",
+      "externalUrl": "",
+      "people": ["531"],
+      "description": "Test description"
     }
   ]
 }

@@ -30,6 +30,13 @@ const routes: Routes = [
         (m) => m.Top500AlbumsComponent
       ),
   },
+  {
+    path: 'har-analyzer',
+    loadComponent: () =>
+      import('./har-analyzer/har-analyzer.component').then(
+        (m) => m.HarAnalyzerComponent
+      ),
+  },
 ];
 
 @NgModule({

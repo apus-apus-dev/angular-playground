@@ -1,0 +1,33 @@
+.har-container { padding: 20px; font-family: sans-serif; }
+.upload-section { margin-bottom: 20px; }
+.error { color: #d9534f; font-weight: bold; }
+input[type="file"] { display: block; margin-top: 10px; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; table-layout: fixed; }
+th, td { border: 1px solid #000000; padding: 12px; text-align: left; }
+.url-cell {
+  max-width: 200px; /* Limits the base width */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  color: #0066cc;
+  transition: all 0.2s ease;
+  width: 60%;
+}
+
+/* When expanded, show full text and wrap if necessary */
+.url-cell.expanded {
+  white-space: normal;
+  overflow: visible;
+  max-width: none;
+  word-break: break-all;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.url-cell:hover {
+  text-decoration: underline;
+}
+
+.same-domain { color: #840000; background: #ffffff }

@@ -1,0 +1,51 @@
+<div>
+<h3>HAR Analysis</h3>
+
+<div class="upload-section">
+  <label for="har-upload" class="button-label">Select HAR File</label>
+  <input
+    id="har-upload"
+    type="file"
+    accept=".har"
+    (change)="onFileSelected($event)"
+  />
+</div>
+
+  @if (errorMessage()) {
+    <div class="error">
+      {{ errorMessage() }}
+    </div>
+  }
+
+  @if (docEntries().length > 0) {
+    <div class="results">
+      <h4>Filtered Document Entries:</h4>
+      <table>
+        <thead>
+        <tr>
+          <th>Method</th>
+          <th>Time hh:mm:ss</th>
+          <th>Delta @if (deltaSet().size === 1) { (Select the second item) }</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for (entry of docEntries(); track entry.id) {
+            <tr [class.same-domain]="entry.domain === expandedDomain()">
+              <td class="url-cell"
+                  [class.expanded]="expandedIndex() === $index"
+                  (click)="toggleExpand($index)"
+                  [title]="entry.url">{{ entry.url }}</td>
+              <td>{{ entry.startedDateTime | date:'hh:mm:ss' }}</td>
+              <td>
+                <input type="checkbox" [(ngModel)]="entry.deltaChecked" (change)="toggleDeltaCheck(entry)">
+                @if (delta() && entry.deltaChecked) {
+                  {{ delta() }} ms
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>
