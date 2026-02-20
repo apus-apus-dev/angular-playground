@@ -105,7 +105,10 @@ export class HarAnalyzerComponent {
           set.delete(firstItem);
         }
         // OPTIONAL: If you need to uncheck the UI for the removed item:
-        this.docEntries().find(e => e.id === firstItem).deltaChecked = false;
+        const item = this.docEntries().find(e => e.id === firstItem);
+        if (item) {
+          item.deltaChecked = false;
+        }
       }
     } else {
       set.delete(entry.id);
